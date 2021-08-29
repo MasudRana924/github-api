@@ -37,7 +37,8 @@ const displayProfile = (user) => {
                     <div class="d-grid gap-2 col-12 mx-auto mb-2">
                         <button class="btn border-secondary" type="button"> <i class="fas fa-cog"></i>Edit Profile</button>
                      </div>
-                     <p><span><i class="fas fa-user-friends"></i> ${user.followers} followers .</span><span> ${user.following} following</span> <span><i class="far fa-star"></i></span>  </p>
+                     <p><span><i class="fas fa-user-friends"></i> ${user.followers} followers .</span><span class="following">${user.following}following.</span>
+                      <span class="star"><i class="far fa-star"></i>0</span>  </p>
                     <p><i class="fas fa-map-marker-alt"></i> ${user.location}</p>
                   
                 </div>
@@ -45,6 +46,7 @@ const displayProfile = (user) => {
             </div>
             <div class="col-md-8">
                 <h3 class="text-center">Repositories</h3>
+                <hr>
                 <div class="row"  id="Totalrepository">
                     
                 </div>
@@ -72,20 +74,34 @@ const ShowrepoDisplay=(repos)=>{
             const reponame = repos[i].name;
 
            div+= `
-            
-                <div class="col-12 repo-column">
-                    <div id="repository" class="repository">
-                        <h5><a href="${repos[i].html_url}" target="_blank">${reponame}</a> </h5>  
-                        
-                        <span class="ml-0 mr-3">
+               
+             <div class="col-12 repo-column">
+                 <div id="repository" class="repository">
+                    <div class="repo-top d-flex justify-content-between">
+                    
+                        <div class="mb-3">
+                           <h5><a href="${repos[i].html_url}" target="_blank">${reponame}</a> </h5> 
+                        </div>
+                       <div>
+                          <button class=" button"><i class="far fa-star"></i>Star</button>
+                        </div>
+                    </div>
+                   <div class="d-flex justify-content-between"> 
+                        <div class="col-10">
+                           <span class="ml-0 mr-3">
                            <span class="repo-language-color" style="background-color: #4F5D95"></span>
                            <span itemprop="programmingLanguage">${repos[i].language}</span>
                            <span>  <i class="far fa-star"></i> ${repos[i].stargazers_count} </span>    <span>    <i class="fas fa-code-branch"></i> ${repos[i].forks_count}</span> 
-                         </span>
-                        </span>    
-                   </div>   
+                           </span>
+                          </span>   
+                        </div> 
+                        <div class="col-2">
+                         <hr class="hr">
+                        </div>  
+                    </div> 
+                 </div>   
                    <hr>
-                  </div>
+            </div>
                         `
 
         }

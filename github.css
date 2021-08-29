@@ -12,9 +12,6 @@ body{
 .fa-github{
     font-size: 30px;
 }
-.button{
-   outline: none;
-}
 img {
     height: auto;
     width: 80%;
@@ -31,11 +28,15 @@ img {
     border-radius: 15px;
 }
 .button{
-    padding:0px 25px 0px 25px;
+   padding:0px 15px 0px 15px;
+   border:1px;
+   border-radius: 5px;
+   background-color: #fff;
+   box-shadow: 0 0 2px;
 }
 .repository {
-    margin-top: 20px;
-    padding: 25px;
+    margin-top: 10px;
+    padding: 15px;
     background-color:#fff;
     border-radius: 15px;
 
@@ -57,4 +58,17 @@ img {
 }
 span {
     margin-right: 30px;
+}
+.following{
+    margin-left:-25px;
+}
+.star{
+    margin-left:-30px;
+}
+.repo-top{
+    display: inline;
+
+}
+.hr{
+    border:1px solid palegreen;
 }
